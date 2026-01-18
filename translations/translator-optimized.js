@@ -238,10 +238,13 @@ class TranslationManager {
             copyright: 'footer .border-t p'
         });
         
-        if (elements.slogan?.textContent.includes('experiencia caribeña')) {
+        if (elements.slogan) {
             elements.slogan.textContent = footer.slogan;
         }
-        if (elements.copyright) elements.copyright.textContent = `© ${footer.copyright}`;
+        if (elements.copyright) {
+            const currentYear = new Date().getFullYear();
+            elements.copyright.textContent = `© ${currentYear} ${footer.copyright}`;
+        }
     }
 
     translateTours(tours) {

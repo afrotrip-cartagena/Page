@@ -2,37 +2,37 @@
   "es": {
     "tour_1": {
       "name": "5 Islas VIP OPEN Bar",
-      "price": "$350.000",
+      "price": "$400.000",
       "description": "Experiencia exclusiva visitando las 5 islas más hermosas del Caribe colombiano. Disfruta de aguas cristalinas, playas paradisíacas y un día inolvidable en el archipiélago de Cartagena."
     },
     "tour_2": {
       "name": "Volcán del Totumo",
-      "price": "$150.000",
+      "price": "$230.000",
       "description": "Experimenta la sensación única de flotar en las aguas termales del Volcán del Totumo, un fenómeno natural extraordinario que te permite relajarte en barro volcánico medicinal."
     },
     "tour_3": {
       "name": "Playa Blanca",
-      "price": "$80.000",
+      "price": "$170.000",
       "description": "Relájate en las paradisíacas arenas blancas de Playa Blanca, el destino perfecto para desconectar y disfrutar del Caribe colombiano en toda su esplendor."
     },
     "tour_4": {
       "name": "Tour noche blanca",
-      "price": "$270.000",
+      "price": "$300.000",
       "description": "Navega por la hermosa bahía de Cartagena y descubre la ciudad desde una perspectiva única mientras disfrutas de las mejores vistas del atardecer caribeño."
     },
     "tour_5": {
       "name": "City Tour",
-      "price": "$80.000",
+      "price": "$100.000",
       "description": "Recorre la ciudad de Cartagena y descubre sus principales atractivos, historia y cultura en un completo tour por los lugares más emblemáticos."
     },
     "tour_6": {
       "name": "Cholón",
-      "price": "$350.000",
+      "price": "$400.000",
       "description": "Disfruta de la fiesta más exclusiva del Caribe en Cholón, el lugar perfecto para vivir una experiencia única con música, diversión y aguas cristalinas."
     },
     "tour_7": {
       "name": "Isla Privada Nena Beach",
-      "price": "$320.000",
+      "price": "$350.000",
       "description": "Escápate a la exclusiva Isla Privada Nena Beach y disfruta de un paraíso tropical con servicio premium, aguas cristalinas y total privacidad en el Caribe."
     },
     "tour_8": {
@@ -47,12 +47,12 @@
     },
     "tour_10": {
       "name": "Atardecer Sibarita Master",
-      "price": "$165.000",
+      "price": "$180.000",
       "description": "Vive una experiencia única contemplando el atardecer más espectacular del Caribe en un ambiente exclusivo y sofisticado. Incluye 2 horas de bebidas premium mientras disfrutas de las vistas más hermosas de Cartagena desde el mar."
     },
     "tour_11": {
       "name": "Cena en Sibarita",
-      "price": "$295.000",
+      "price": "$300.000",
       "description": "Disfruta de una experiencia gastronómica excepcional con una cena exclusiva en el reconocido Sibarita. Vive una velada inolvidable con exquisitos sabores caribeños, ambiente sofisticado y un servicio de primer nivel en uno de los destinos más prestigiosos de Cartagena."
     },
     "tour_12": {
@@ -77,32 +77,32 @@
     },
     "tour_16": {
       "name": "Playa Blanca + Islas del Rosario",
-      "price": "$140.000",
+      "price": "$180.000",
       "description": "Combina lo mejor de dos destinos paradisíacos: las arenas blancas de Playa Blanca y la belleza natural de las Islas del Rosario en una experiencia inolvidable."
     },
     "tour_17": {
       "name": "Playa Tranquila",
-      "price": "$120.000",
+      "price": "$180.000",
       "description": "Escápate a Playa Tranquila y disfruta de un ambiente sereno y relajante, perfecto para desconectar del estrés y vivir momentos de paz en un entorno paradisíaco."
     },
     "tour_18": {
       "name": "Isla Paue",
-      "price": "$390.000",
+      "price": "$450.000",
       "description": "Descubre la exclusiva Isla Paue, un destino premium que ofrece la máxima experiencia caribeña con servicios de lujo, aguas cristalinas y una atmósfera única."
     },
     "tour_19": {
       "name": "Isla del Pirata",
-      "price": "$350.000",
+      "price": "$390.000",
       "description": "Vive una aventura única en la mítica Isla del Pirata, donde las leyendas cobran vida en un paraíso caribeño lleno de historia, misterio y paisajes espectaculares."
     },
     "tour_20": {
       "name": "Isla de Pao Pao",
-      "price": "$370.000",
+      "price": "$390.000",
       "description": "Vive una experiencia extraordinaria en la exótica Isla de Pao Pao, un destino exclusivo que combina aventura, naturaleza virgen y el auténtico espíritu caribeño en un paraíso único."
     },
     "tour_21": {
       "name": "Isla Palma",
-      "price": "$450.000",
+      "price": "$520.000",
       "description": "Descubre la majestuosa Isla Palma, el destino más exclusivo del Caribe colombiano que ofrece una experiencia de lujo supremo con servicios personalizados y paisajes incomparables."
     },
     "tour_22": {
@@ -137,8 +137,8 @@
     },
     "tour_28": {
       "name": "Isla Lizamar",
-      "price": "$320.000",
-      "description": "Vive una experiencia única en Isla Lizamar, un destino costero encantador que combina historia, naturaleza y modernidad en un ambiente exclusivo frente al mar Caribe."
+      "price": "$400.000",
+      "description": "Escápate a la mágica Isla Lizamar, un refugio de ensueño en el archipiélago del Rosario. Disfruta de sus aguas cristalinas, vegetación exuberante y el mejor servicio caribeño en un entorno de paz absoluta y belleza natural incomparable."
     },
     "tour_29": {
       "name": "Luxuri",
@@ -204,37 +204,37 @@
   "en": {
     "tour_1": {
       "name": "5 VIP Islands OPEN Bar",
-      "price": "$350.000",
+      "price": "$400.000",
       "description": "Exclusive experience visiting the 5 most beautiful islands in the Colombian Caribbean. Enjoy crystal clear waters, paradisiacal beaches and an unforgettable day in the Cartagena archipelago."
     },
     "tour_2": {
       "name": "Totumo Volcano",
-      "price": "$150.000",
+      "price": "$230.000",
       "description": "Experience the unique sensation of floating in the thermal waters of the Totumo Volcano, an extraordinary natural phenomenon that allows you to relax in medicinal volcanic mud."
     },
     "tour_3": {
       "name": "White Beach",
-      "price": "$80.000",
+      "price": "$170.000",
       "description": "Relax on the paradisiacal white sands of White Beach, the perfect destination to disconnect and enjoy the Colombian Caribbean in all its splendor."
     },
     "tour_4": {
       "name": "White Night Tour",
-      "price": "$270.000",
+      "price": "$300.000",
       "description": "Navigate through the beautiful bay of Cartagena and discover the city from a unique perspective while enjoying the best views of the Caribbean sunset."
     },
     "tour_5": {
       "name": "City Tour",
-      "price": "$80.000",
+      "price": "$100.000",
       "description": "Tour the city of Cartagena and discover its main attractions, history and culture in a complete tour of the most emblematic places."
     },
     "tour_6": {
       "name": "Cholón",
-      "price": "$350.000",
+      "price": "$400.000",
       "description": "Enjoy the most exclusive party in the Caribbean at Cholón, the perfect place to live a unique experience with music, fun and crystal clear waters."
     },
     "tour_7": {
       "name": "Nena Beach Private Island",
-      "price": "$320.000",
+      "price": "$350.000",
       "description": "Escape to the exclusive Nena Beach Private Island and enjoy a tropical paradise with premium service, crystal clear waters and total privacy in the Caribbean."
     },
     "tour_8": {
@@ -249,12 +249,12 @@
     },
     "tour_10": {
       "name": "Sibarita Master Sunset",
-      "price": "$165.000",
+      "price": "$180.000",
       "description": "Live a unique experience contemplating the most spectacular sunset in the Caribbean in an exclusive and sophisticated environment. Includes 2 hours of premium drinks while enjoying the most beautiful views of Cartagena from the sea."
     },
     "tour_11": {
       "name": "Dinner at Sibarita",
-      "price": "$295.000",
+      "price": "$300.000",
       "description": "Enjoy an exceptional gastronomic experience with an exclusive dinner at the renowned Sibarita. Live an unforgettable evening with exquisite Caribbean flavors, sophisticated atmosphere and first-class service at one of Cartagena's most prestigious destinations."
     },
     "tour_12": {
@@ -279,32 +279,32 @@
     },
     "tour_16": {
       "name": "White Beach + Rosario Islands",
-      "price": "$140.000",
+      "price": "$180.000",
       "description": "Combine the best of two paradisiacal destinations: the white sands of White Beach and the natural beauty of the Rosario Islands in an unforgettable experience."
     },
     "tour_17": {
       "name": "Tranquil Beach",
-      "price": "$120.000",
+      "price": "$180.000",
       "description": "Escape to Tranquil Beach and enjoy a serene and relaxing atmosphere, perfect for disconnecting from stress and living moments of peace in a paradisiacal environment."
     },
     "tour_18": {
       "name": "Paue Island",
-      "price": "$390.000",
+      "price": "$450.000",
       "description": "Discover the exclusive Paue Island, a premium destination that offers the ultimate Caribbean experience with luxury services, crystal clear waters and a unique atmosphere."
     },
     "tour_19": {
       "name": "Pirate Island",
-      "price": "$350.000",
+      "price": "$390.000",
       "description": "Live a unique adventure on the mythical Pirate Island, where legends come to life in a Caribbean paradise full of history, mystery and spectacular landscapes."
     },
     "tour_20": {
       "name": "Pao Pao Island",
-      "price": "$370.000",
-      "description": "Live an extraordinary experience on the exotic Pao Pao Island, an exclusive destination that combines adventure, virgin nature and the authentic Caribbean spirit in a unique paradise."
+      "price": "$390.000",
+      "description": "Live an extraordinary experience on the exotic Pao Pao Island, an exclusive destination that combines adventure, nature virgen and the authentic Caribbean spirit in a unique paradise."
     },
     "tour_21": {
       "name": "Palm Island",
-      "price": "$450.000",
+      "price": "$520.000",
       "description": "Discover the majestic Palm Island, the most exclusive destination in the Colombian Caribbean that offers a supreme luxury experience with personalized services and incomparable landscapes."
     },
     "tour_22": {
@@ -339,8 +339,8 @@
     },
     "tour_28": {
       "name": "Lizamar Island",
-      "price": "$320.000",
-      "description": "Live a unique experience on Lizamar Island, a charming coastal destination that combines history, nature and modernity in an exclusive environment facing the Caribbean Sea."
+      "price": "$400.000",
+      "description": "Escape to the magical Lizamar Island, a dream refuge in the Rosario archipelago. Enjoy its crystal clear waters, lush vegetation, and the best Caribbean service in an environment of absolute peace and incomparable natural beauty."
     },
     "tour_29": {
       "name": "Luxuri",

@@ -94,26 +94,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-50" x-data="{ 
-    mobileMenuOpen: false, 
-    showMoreTours: false,
-    currentLanguage: 'es',
-    translations: {
-        viewMoreTours: { es: 'Ver más tours', en: 'View more tours' },
-        viewLessTours: { es: 'Ver menos tours', en: 'View less tours' }
-    },
-    getMoreToursText() {
-        return this.showMoreTours ? 
-            this.translations.viewLessTours[this.currentLanguage] : 
-            this.translations.viewMoreTours[this.currentLanguage];
-    },
-    init() {
-        // Escuchar cambios de idioma de forma optimizada
-        document.addEventListener('language-changed', (event) => {
-            this.currentLanguage = event.detail.language;
-        });
-    }
-}" x-init="init()">
+<body class="bg-gray-50" x-data="tourApp">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKQ8WZ8Z"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -186,7 +167,45 @@
         <!-- Services Section -->
         <section id="services" class="py-16 px-4 md:px-8 bg-slate-50">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Nuestros Tours</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Nuestros Servicios</h2>
+                
+                <!-- Buscador y Filtros -->
+                <div class="bg-white p-6 rounded-xl shadow-md mb-8 w-full mx-auto border border-gray-100">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <!-- Nombre -->
+                        <div class="col-span-1 md:col-span-1">
+                             <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-search text-gray-400"></i>
+                                </span>
+                                <input type="text" x-model="searchTerm" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-caribbean-blue focus:border-caribbean-blue outline-none transition-shadow" placeholder="Buscar...">
+                            </div>
+                        </div>
+                        
+                        <!-- Rango de Precio -->
+                        <div class="col-span-1 md:col-span-2">
+                             <label class="block text-sm font-medium text-gray-700 mb-1">Rango de Precio</label>
+                             <div class="flex items-center space-x-2">
+                                <input type="text" x-model="minPrice" @input="minPrice = formatPrice($event.target.value)" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-caribbean-blue focus:border-caribbean-blue outline-none transition-shadow" placeholder="Min $">
+                                <span class="text-gray-500 font-bold">-</span>
+                                <input type="text" x-model="maxPrice" @input="maxPrice = formatPrice($event.target.value)" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-caribbean-blue focus:border-caribbean-blue outline-none transition-shadow" placeholder="Max $">
+                             </div>
+                        </div>
+
+                        <!-- Filtros (Categoría) -->
+                        <div class="col-span-1 md:col-span-1">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Filtros</label>
+                            <select x-model="category" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-caribbean-blue focus:border-caribbean-blue bg-white outline-none transition-shadow cursor-pointer">
+                                <option value="all">Todos</option>
+                                <option value="islas">Islas</option>
+                                <option value="toures">Toures</option>
+                                <option value="alquiler">Alquiler</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-4">
                     <!-- Primeros 9 tours (visibles por defecto) -->
@@ -218,7 +237,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">5 Islas VIP OPEN Bar</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$350.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$400.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -264,7 +283,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Volcán del Totumo</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$150.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$230.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -304,7 +323,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Playa Blanca</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$80.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$170.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -341,7 +360,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Tour noche blanca</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$270.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$300.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -381,7 +400,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">City Tour</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$80.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$100.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -421,7 +440,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Cholón</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$350.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$400.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -461,7 +480,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Isla Privada Nena Beach</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$320.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$350.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -566,9 +585,8 @@
                         </div>
                     </div>
                     
-                    <!-- Tours adicionales (visibles solo con "Ver más tours") -->
-                    <template x-if="showMoreTours">
-                        <div class="contents">
+                    <!-- Tours adicionales -->
+                    <div class="contents">
                     <!-- Tour Card 10 - Atardecer Sibarita Master -->
                     <div class="tour-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
                         <div class="swiper h-56" data-swiper-tour="tour-10">
@@ -603,7 +621,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Atardecer Sibarita Master</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$165.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$180.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -651,7 +669,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Cena en Sibarita</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$295.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$300.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -900,7 +918,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Playa Blanca + Islas del Rosario</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$140.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$180.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -940,7 +958,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Playa Tranquila</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$120.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$180.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -980,7 +998,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Isla Paue</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$390.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$450.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -1023,7 +1041,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Isla del Pirata</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$350.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$390.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -1066,7 +1084,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Isla de Pao Pao</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$370.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$390.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -1109,7 +1127,7 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Isla Palma</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$450.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$520.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
@@ -1402,11 +1420,11 @@
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Isla Lizamar</h3>
-                            <p class="text-2xl font-bold text-purple-700 mb-4">$320.000</p>
+                            <p class="text-2xl font-bold text-purple-700 mb-4">$400.000</p>
                             <div class="tour-description">
                                 <div class="description-content">
                                     <p class="text-white">
-                                        Vive una experiencia única en Isla Lizamar, un destino costero encantador que combina historia, naturaleza y modernidad en un ambiente exclusivo frente al mar Caribe.
+                                        Escápate a la mágica Isla Lizamar, un refugio de ensueño en el archipiélago del Rosario. Disfruta de sus aguas cristalinas, vegetación exuberante y el mejor servicio caribeño en un entorno de paz absoluta y belleza natural incomparable.
                                     </p>
                                 </div>
                                 <div class="flex justify-between items-center">
@@ -1922,11 +1940,10 @@
                         </div>
                     </div>
                         </div>
-                    </template>
                     
                 </div>
                 
-                <div class="text-center mt-12">
+                <div class="text-center mt-12" x-show="searchTerm === '' && minPrice === '' && maxPrice === '' && category === 'all'">
                     <button 
                         @click="showMoreTours = !showMoreTours" 
                         class="bg-purple-700 hover:bg-purple-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105"
@@ -2033,7 +2050,7 @@
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Afrotripcartagena. Todos los derechos reservados.</p>
+                <p>&copy; <span id="year-fallback">2026</span> Afrotripcartagena. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -2044,6 +2061,113 @@
     <script src="script.js" defer></script>
     <!-- Translation System Optimized -->
     <script src="translations/translator-optimized.js" defer></script>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('tourApp', () => ({
+                mobileMenuOpen: false,
+                showMoreTours: false,
+                currentLanguage: 'es',
+                // Search & Filter Global State - Explicitly initialized
+                searchTerm: '',
+                minPrice: '',
+                maxPrice: '',
+                category: 'all',
+                
+                translations: {
+                    viewMoreTours: { es: 'Ver más tours', en: 'View more tours' },
+                    viewLessTours: { es: 'Ver menos tours', en: 'View less tours' }
+                },
+
+                formatPrice(value) {
+                    if (!value) return '';
+                    let number = value.replace(/\D/g, '');
+                    if (number === '') return '';
+                    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                },
+
+                getMoreToursText() {
+                    return this.showMoreTours ? 
+                        this.translations.viewLessTours[this.currentLanguage] : 
+                        this.translations.viewMoreTours[this.currentLanguage];
+                },
+
+                filterTours() {
+                    const cards = document.querySelectorAll('.tour-card');
+                    if (!cards.length) return;
+
+                    const hasActiveFilter = 
+                        (this.searchTerm && this.searchTerm !== '') || 
+                        (this.minPrice && this.minPrice !== '') || 
+                        (this.maxPrice && this.maxPrice !== '') || 
+                        (this.category && this.category !== 'all');
+                    
+                    cards.forEach((card, index) => {
+                        const titleEl = card.querySelector('h3');
+                        const priceEl = card.querySelector('p.text-purple-700');
+                        
+                        if (!titleEl || !priceEl) return;
+                        
+                        const title = titleEl.textContent.toLowerCase();
+                        const priceText = priceEl.textContent;
+                        const price = parseInt(priceText.replace(/\D/g, '')) || 0;
+                        
+                        let cardCategory = 'otros';
+                        const descEl = card.querySelector('.tour-description');
+                        const fullText = (title + ' ' + (descEl ? descEl.innerText : '')).toLowerCase();
+                        
+                        if (fullText.includes('isla') || fullText.includes('playa') || fullText.includes('mar') || fullText.includes('beach') || fullText.includes('rosario') || fullText.includes('múcura') || fullText.includes('tintipán') || fullText.includes('paue') || fullText.includes('encanto')) {
+                            cardCategory = 'islas';
+                        } else if (fullText.includes('yate') || fullText.includes('bote') || fullText.includes('catamaran') || fullText.includes('alquiler') || fullText.includes('lancha') || fullText.includes('deportivo')) {
+                            cardCategory = 'alquiler';
+                        } else if (fullText.includes('tour') || fullText.includes('volcan') || fullText.includes('city') || fullText.includes('visita') || fullText.includes('chiva') || fullText.includes('caminata') || fullText.includes('helicóptero')) {
+                            cardCategory = 'toures';
+                        }
+                        
+                        const term = this.searchTerm ? this.searchTerm.toLowerCase() : '';
+                        const matchesSearch = title.includes(term);
+                        const matchesCategory = this.category === 'all' || this.category === cardCategory;
+                        
+                        const minStr = this.minPrice ? this.minPrice.replace(/\./g, '') : '';
+                        const maxStr = this.maxPrice ? this.maxPrice.replace(/\./g, '') : '';
+                        const min = minStr ? parseInt(minStr) : 0;
+                        const max = maxStr ? parseInt(maxStr) : Infinity;
+                        
+                        const matchesPrice = price >= min && price <= max;
+                        
+                        if (matchesSearch && matchesCategory && matchesPrice) {
+                            if (hasActiveFilter) {
+                                card.style.display = '';
+                            } else {
+                                if (index < 9 || this.showMoreTours) {
+                                    card.style.display = '';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            }
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    setTimeout(() => window.dispatchEvent(new Event('scroll')), 100);
+                },
+
+                init() {
+                    this.filterTours();
+                    
+                    document.addEventListener('language-changed', (event) => {
+                        this.currentLanguage = event.detail.language;
+                    });
+                    
+                    this.$watch('searchTerm', () => this.filterTours());
+                    this.$watch('minPrice', () => this.filterTours());
+                    this.$watch('maxPrice', () => this.filterTours());
+                    this.$watch('category', () => this.filterTours());
+                    this.$watch('showMoreTours', () => this.filterTours());
+                }
+            }));
+        });
+    </script>
 </body>
 </html>
 

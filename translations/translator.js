@@ -336,13 +336,16 @@ class TranslationManager {
     translateFooter(footer) {
         // Slogan del footer
         const slogan = document.querySelector('footer p.text-gray-400');
-        if (slogan && slogan.textContent.includes('experiencia caribeña')) {
+        if (slogan) {
             slogan.textContent = footer.slogan;
         }
         
         // Copyright
         const copyright = document.querySelector('footer .border-t p');
-        if (copyright) copyright.textContent = `© ${footer.copyright}`;
+        if (copyright) {
+            const currentYear = new Date().getFullYear();
+            copyright.textContent = `© ${currentYear} ${footer.copyright}`;
+        }
     }
 
     translateTours(tours) {
